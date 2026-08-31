@@ -12,6 +12,9 @@
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- QRCode.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
     :root {
@@ -358,6 +361,21 @@
       position: relative;
       box-shadow: 0 8px 25px rgba(200, 162, 97, 0.1);
     }
+	
+	/* QR Code Container Styling */
+    .qrcode-box {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 16px;
+      display: inline-block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 2px dashed var(--primary);
+      margin: 15px auto;
+    }
+    .qrcode-box img, .qrcode-box canvas {
+      margin: 0 auto;
+      display: block;
+    }
 
     .form-group {
       margin-bottom: 18px;
@@ -630,6 +648,16 @@
       <p style="font-size: 0.95rem; margin-bottom: 30px; letter-spacing: 2px; color: var(--primary-light); font-weight: 600;">
         SABTU, 24 OKTOBER 2026
       </p>
+	  
+	  <!-- Dynamic Cover QR Code Section -->
+      <div style="margin-bottom: 25px;">
+        <div class="qrcode-box">
+          <div id="cover-qrcode"></div>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-muted);">
+          <i class="fa-solid fa-qrcode"></i> Kode Akses Masuk Tamu
+        </p>
+      </div>
 
       <button class="btn-gold" onclick="openInvitation()">
         <i class="fa-solid fa-envelope-open"></i> Buka Undangan
@@ -642,6 +670,7 @@
     <a href="#hero" title="Beranda"><i class="fa-solid fa-house"></i></a>
     <a href="#pasangan" title="Mempelai"><i class="fa-solid fa-heart"></i></a>
     <a href="#acara" title="Acara"><i class="fa-solid fa-calendar-days"></i></a>
+	<a href="#qrcode-section" title="Tiket QR"><i class="fa-solid fa-qrcode"></i></a>
     <a href="#hadiah" title="Hadiah"><i class="fa-solid fa-gift"></i></a>
     <a href="#rsvp" title="RSVP"><i class="fa-solid fa-comment-dots"></i></a>
   </nav>
@@ -672,6 +701,39 @@
       </a>
     </div>
   </section>
+  
+  
+  <!-- Dynamic Guest QR Code Card Section -->
+  <section class="container" id="qrcode-section">
+    <div class="glass-card" style="padding: 30px 20px; text-align: center;">
+      <i class="fa-solid fa-id-card" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+      <h2 class="font-serif-title" style="color: var(--primary-light); font-size: 1.6rem; margin-bottom: 8px;">Kartu Undangan Digital</h2>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 15px;">
+        Tunjukkan QR Code ini kepada panitia penerima tamu di lokasi acara untuk konfirmasi kehadiran Anda secara otomatis.
+      </p>
+
+      <div class="qrcode-box">
+        <div id="main-qrcode"></div>
+      </div>
+
+      <h3 id="qr-guest-name" class="font-serif-title" style="font-size: 1.2rem; color: var(--text-light); margin-top: 10px;">
+        Tamu Undangan
+      </h3>
+      <p id="qr-code-id" style="font-size: 0.78rem; font-family: monospace; color: var(--primary-light); margin-top: 4px;">
+        ID: TB-GUEST-001
+      </p>
+
+      <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn-outline" onclick="downloadQRCode()">
+          <i class="fa-solid fa-download"></i> Simpan Tiket QR
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
 
   <!-- Quote Section -->
   <div class="container">
@@ -918,26 +980,6 @@
     </div>
   </section>
 
-  <!-- Buku Tamu Digital -->
-  <section class="container" id="hadiah">
-    <div class="section-title">
-      <h2 class="font-serif-title">Buku Tamu Digital</h2>
-      <p>Scan QR Code di atas untuk mengisi kehadiran & ucapan doa. Terima kasih telah berbagi kebahagiaan bersama kami</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-      <!-- Bank BCA -->
-      <div class="bank-card">
-        <img src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/qrcode-module_0.png" alt="Kode QR Buku Tamu" style="max-width: 180px; margin: 0 auto; display: block; border-radius: 8px;">
-        <p style="margin-bottom: 15px;"></p>
-        <button class="btn-outline" onclick="#">
-          Sabtu, 24 Oktober 2026
-        </button>
-      </div>
-
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer style="text-align: center; padding: 25px 20px; background: rgba(250, 245, 239, 0.98); font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(200, 162, 97, 0.25);">
     <p class="font-script gold-gradient-text" style="font-size: 2rem; margin-bottom: 5px;">Tian &amp; Bunga</p>
@@ -1065,6 +1107,16 @@
       }, 3000);
     }
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	function toggleWeddingGift() {
       const giftContent = document.getElementById('giftContent');
       const btn = document.getElementById('toggleGiftBtn');
@@ -1132,6 +1184,125 @@
       }
       animateParticles();
     }
+	
+	// 3. Dynamic QR Code Generator based on Guest Name
+let currentGuestName = "Tamu Undangan";
+let coverQrObj = null;
+let mainQrObj = null;
+
+function generateGuestID(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = (hash << 5) - hash + name.charCodeAt(i);
+    hash |= 0;
+  }
+  return 'TB-' + Math.abs(hash).toString(36).toUpperCase().padStart(6, '0');
+}
+
+function renderQRCodes(name) {
+  // Update variabel global nama tamu
+  currentGuestName = name;
+  const guestId = generateGuestID(name);
+  
+  const qrData = JSON.stringify({
+    guest: name,
+    id: guestId
+  });
+
+  // Helper aman untuk update innerText tanpa crash jika elemen tidak ada
+  const setElementText = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.innerText = text;
+  };
+
+  // Update Label Elements
+  setElementText('guest-name-display', name);
+  setElementText('qr-guest-name', name);
+  setElementText('qr-code-id', "ID: " + guestId);
+
+  const guestInput = document.getElementById('guestName');
+  if (guestInput) {
+    guestInput.value = name === "Tamu Undangan" ? "" : name;
+  }
+
+  // Clear previous QR Canvas
+  const coverElem = document.getElementById('cover-qrcode');
+  const mainElem = document.getElementById('main-qrcode');
+
+  if (coverElem) coverElem.innerHTML = "";
+  if (mainElem) mainElem.innerHTML = "";
+
+  // Render Cover QR
+  if (coverElem && typeof QRCode !== 'undefined') {
+    coverQrObj = new QRCode(coverElem, {
+      text: qrData,
+      width: 110,
+      height: 110,
+      colorDark: "#9a783e",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  }
+
+  // Render Main Section QR
+  if (mainElem && typeof QRCode !== 'undefined') {
+    mainQrObj = new QRCode(mainElem, {
+      text: qrData,
+      width: 150,
+      height: 150,
+      colorDark: "#2c2825",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  }
+}
+
+function updateGuestQRFromInput(val) {
+  const name = val.trim() !== "" ? val.trim() : "Tamu Undangan";
+  renderQRCodes(name);
+}
+
+// Read URL query string for guest name
+window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestParam = urlParams.get('to') || urlParams.get('u') || urlParams.get('nama');
+  if (guestParam) {
+    currentGuestName = guestParam.trim();
+  }
+  renderQRCodes(currentGuestName);
+});
+
+// Download QR Code Image
+function downloadQRCode() {
+  const qrCanvas = document.querySelector('#main-qrcode canvas');
+  const qrImg = document.querySelector('#main-qrcode img');
+  let imageURI = "";
+
+  // Utamakan img jika src-nya sudah berupa Base64 (Data URI), lalu fallback ke Canvas
+  if (qrImg && qrImg.src && qrImg.src.startsWith('data:image')) {
+    imageURI = qrImg.src;
+  } else if (qrCanvas) {
+    imageURI = qrCanvas.toDataURL("image/png");
+  }
+
+  if (imageURI && imageURI !== "data:,") {
+    const link = document.createElement('a');
+    const safeFileName = currentGuestName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    link.download = `Tiket_QR_${safeFileName}.png`;
+    link.href = imageURI;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    if (typeof showToast === 'function') {
+      showToast("Tiket QR Code berhasil diunduh!");
+    }
+  } else {
+    if (typeof showToast === 'function') {
+      showToast("Gagal mengunduh QR Code. Silakan coba lagi.");
+    }
+  }
+}
   </script>
 </body>
 </html>
