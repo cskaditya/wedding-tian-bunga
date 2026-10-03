@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Pernikahan - Tian & Bunga</title>
+  <title>The Wedding Of Tian & Bunga</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -362,7 +362,7 @@
       box-shadow: 0 8px 25px rgba(200, 162, 97, 0.1);
     }
 	
-	/* QR Code Container Styling */
+    /* QR Code Container Styling */
     .qrcode-box {
       background: #ffffff;
       padding: 16px;
@@ -450,7 +450,6 @@
       color: #ffffff;
     }
 
-    /* Guestbook Comment Feed */
     .guestbook-feed {
       max-height: 400px;
       overflow-y: auto;
@@ -632,22 +631,15 @@
 
   <!-- Opening / Cover Modal Screen -->
   <div id="cover-screen">
-    <div style="max-width: 500px;">
-      <p class="font-serif-title" style="letter-spacing: 3px; font-size: 0.9rem; color: var(--primary-light); text-transform: uppercase;">
-        Kepada Yth. Bapak/Ibu/Saudara/i
-      </p>
-      <h3 id="guest-name-display" style="font-size: 1.3rem; margin: 15px 0; font-weight: 600; color: var(--text-light);">Tamu Undangan</h3>
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 25px;">
-        Kami Mengundang Anda Untuk Hadir Di Acara Pernikahan
+    <div style="max-width: 500px;">   
+
+      <p style="font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 4px; color: var(--primary-light); font-weight: 600;">
+        The Wedding Of
       </p>
 
-      <h1 class="font-script gold-gradient-text script-font" style="font-size: 4.8rem; margin-bottom: 10px; line-height: 1.5;">
+      <h1 class="font-script gold-gradient-text script-font" style="font-size: 4.8rem; margin-bottom: -10px; line-height: 1.5;">
         Tian &amp; Bunga
-      </h1>
-
-      <p style="font-size: 0.95rem; margin-bottom: 30px; letter-spacing: 2px; color: var(--primary-light); font-weight: 600;">
-        SABTU, 24 OKTOBER 2026
-      </p>
+      </h1> 
 	  
 	  <!-- Dynamic Cover QR Code Section -->
       <div style="margin-bottom: 25px;">
@@ -659,6 +651,11 @@
         </p>
       </div>
 
+      <p style="font-size: 0.9rem; color: var(--primary-light); ">
+        Kepada Yth. Bapak/Ibu/Saudara/i
+      </p>
+      <h3 id="guest-name-display" style="font-size: 0.95rem; margin: 15px 0; font-weight: 600; color: var(--primary-light);">Tamu Undangan</h3>  
+
       <button class="btn-gold" onclick="openInvitation()">
         <i class="fa-solid fa-envelope-open"></i> Buka Undangan
       </button>
@@ -668,10 +665,10 @@
   <!-- Sticky Bottom Quick Navigation -->
   <nav class="bottom-nav">
     <a href="#hero" title="Beranda"><i class="fa-solid fa-house"></i></a>
+    <a href="#qrcode-section" title="Tiket QR"><i class="fa-solid fa-qrcode"></i></a>
     <a href="#pasangan" title="Mempelai"><i class="fa-solid fa-heart"></i></a>
     <a href="#acara" title="Acara"><i class="fa-solid fa-calendar-days"></i></a>
-	<a href="#qrcode-section" title="Tiket QR"><i class="fa-solid fa-qrcode"></i></a>
-    <a href="#hadiah" title="Hadiah"><i class="fa-solid fa-gift"></i></a>
+    <a href="#info" title="Info"><i class="fa-solid fa-info-circle"></i></a>
     <a href="#rsvp" title="RSVP"><i class="fa-solid fa-comment-dots"></i></a>
   </nav>
 
@@ -681,7 +678,7 @@
       <p class="font-serif-title" style="letter-spacing: 4px; font-size: 1.1rem; color: var(--primary-light); text-transform: uppercase;">
         The Wedding Of
       </p>
-      <h1 class="font-script gold-gradient-text script-font" style="font-size: 5.5rem; margin: 15px 0 20px 0; line-height: 1.5;">
+      <h1 class="font-script gold-gradient-text script-font" style="font-size: 5.5rem; margin: 15px 0 5px 0; line-height: 1.5;">
         Tian &amp; Bunga
       </h1>
       <p class="font-serif-title" style="font-size: 1.1rem; letter-spacing: 2px; color: #44403c;">
@@ -696,12 +693,16 @@
         <div class="timer-box"><span id="seconds">00</span><small>Detik</small></div>
       </div>
 
-      <a href="#rsvp" class="btn-gold" style="display: inline-flex; width: auto; margin-top: 15px; padding: 12px 30px;">
+      <div class="section-title" style="max-width: 515px;">
+        <p class="font-serif-title" style="font-size: 2rem; letter-spacing: 2px; color: #44403c;">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ </p>
+        <p style="font-size: 0.85rem; color: var(--primary-light);">Bismillah, dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, Kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri Resepsi Pernikahan kami dan memberikan doa restu kepada kedua mempelai.</p>
+      </div>
+
+      <a href="#rsvp" class="btn-gold" style="display: inline-flex; width: auto; margin-top: -10px; padding: 12px 30px;">
         <i class="fa-solid fa-calendar-check"></i> Konfirmasi Kehadiran
       </a>
     </div>
   </section>
-  
   
   <!-- Dynamic Guest QR Code Card Section -->
   <section class="container" id="qrcode-section">
@@ -730,17 +731,16 @@
       </div>
     </div>
   </section>
-  
-  
-  
-  
 
   <!-- Quote Section -->
   <div class="container">
     <div class="glass-card" style="padding: 35px 25px; text-align: center;">
-      <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
-      <p class="font-body" style="font-size: 1.05rem; font-style: italic; color: #44403c; line-height: 1.8; max-width: 650px; margin: 0 auto;">
-        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+      <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: var(--primary); margin-bottom: 18px;"></i>
+      <p class="font-body" style="font-size: 1.5rem; font-weight: 800px; color: #44403c; line-height: 1.5; max-width: 650px; margin: 0 auto; margin-bottom: 15px;">
+        وَمِنْ اٰيٰتِهٖ اَنْ خَلَقَ لَكُمۡ مِّنْ اَنْفُسِكُمْ اَزۡوَاجًا لِّتَسۡكُنُوۡا اِلَيۡهَا وَجَعَلَ بَيۡنَكُمۡ مَّوَدَّةً وَّرَحۡمَةً ۚ  اِنَّ فِىۡ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوۡنَ
+      </p>
+      <p class="font-body" style="font-size: 0.95rem; font-style: italic; color: #44403c; line-height: 1.6; max-width: 650px; margin: 0 auto;">
+        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri, agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
       </p>
       <span style="display: block; margin-top: 15px; font-size: 0.9rem; font-weight: 600; color: var(--primary-light);">
         — QS. Ar-Rum: 21
@@ -751,7 +751,7 @@
   <!-- Groom & Bride Section -->
   <section class="container" id="pasangan">
     <div class="section-title">
-      <h2 class="font-serif-title">Mempelai Pria &amp; Wanita</h2>
+      <h2 class="font-serif-title">Kedua Mempelai</h2>
       <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan</p>
     </div>
 
@@ -794,6 +794,7 @@
         </p>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
           <strong>Masjid Ramadhan Araya</strong><br>
+          (Lantai 2)<br>
           Jl. Blimbing Indah Selatan XII No.1A, Kec. Blimbing, Kota Malang
         </p>
         <a href="https://maps.app.goo.gl/Bg7PtLBC6zrAMrRr9" target="_blank" class="btn-outline">
@@ -811,6 +812,7 @@
         </p>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
           <strong>Masjid Ramadhan Araya</strong><br>
+          (Lantai 1)<br>
           Jl. Blimbing Indah Selatan XII No.1A, Kec. Blimbing, Kota Malang
         </p>
         <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Tian+%26+Bunga&dates=20261024T010000Z/20261024T080000Z&details=Selamat+datang+di+pernikahan+Tian+dan+Bunga.&location=Masjid+Ramadhan+Araya" target="_blank" class="btn-outline">
@@ -845,51 +847,17 @@
         <i class="fa-solid fa-location-arrow"></i> Google Maps
       </a>
     </div>
-	<div class="section-title">
-      <h3 class="font-serif-title" style="margin-top: 42px;">Area Masjid (Wajib Lepas Alas Kaki)</h3>
-      <p>Demi kenyamanan dan kesucian area masjid, seluruh tamu undangan diimbau untuk melepas alas kaki (sepatu/sandal) selama acara akad dan resepsi berlangsung. <strong> Disarankan untuk mengenakan kaos kaki</strong> agar tetap nyaman saat beraktivitas.</p>
-    </div>
   </section>
 
-  <!-- Love Story Section -->
-  <section class="container">
-    <div class="section-title">
-      <h2 class="font-serif-title">Kisah Perkenalan</h2>
-      <p>Perjalanan Singkat Dipertemukan</p>
+  <div class="container" id="info">
+    <div class="glass-card" style="padding: 35px 25px; text-align: center;">
+      <i class="fa-solid fa-info-circle" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+      <h3 class="font-serif-title" style="margin-bottom: 10px;">Area Masjid Wajib Melepas Alas Kaki</h3>
+      <p class="font-body" style="font-size: 0.95rem; color: #44403c; line-height: 1.8; max-width: 650px; margin: 0 auto;">
+        Demi kenyamanan dan kesucian area masjid, seluruh tamu undangan dihimbau untuk melepas alas kaki (sepatu/sandal) selama acara akad dan resepsi berlangsung. <strong> Disarankan untuk mengenakan kaos kaki</strong> agar tetap nyaman saat beraktivitas. Atas pengertiannya kami ucapkan terima kasih.
+      </p>
     </div>
-
-    <div class="timeline">
-      <div class="timeline-item left">
-        <div class="timeline-icon"><i class="fa-solid fa-comments"></i></div>
-        <div class="glass-card" style="padding: 20px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-light);">30 Mei 2026</span>
-          <h4 class="font-serif-title" style="margin: 5px 0; font-size: 1.1rem; color: var(--text-light);">Nazhor</h4>
-		  <p style="font-size: 0.82rem; color: var(--text-muted);">Berawal dari niat baik untuk saling mengenal, dalam ikhtiar nazhor yang dipenuhi rasa syukur dan ketenangan.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item right">
-        <div class="timeline-icon"><i class="fa-solid fa-heart"></i></div>
-        <div class="glass-card" style="padding: 20px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-light);">21 Juni 2026</span>
-          <h4 class="font-serif-title" style="margin: 5px 0; font-size: 1.1rem; color: var(--text-light);">Khitbah</h4>
-		  <p style="font-size: 0.82rem; color: var(--text-muted);">Yakin akan takdir-Nya, kami melangkah untuk saling mengikat janji dan memohon restu dalam acara lamaran secara kekeluargaan.</p>
-        </div>
-      </div>
-	  
-	   <div class="timeline-item left">
-        <div class="timeline-icon"><i class="fa-solid fa-user-group"></i></div>
-        <div class="glass-card" style="padding: 20px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-light);">28 Juni 2026</span>
-          <h4 class="font-serif-title" style="margin: 5px 0; font-size: 1.1rem; color: var(--text-light);">Silaturahmi Keluarga</h4>
-		  <p style="font-size: 0.82rem; color: var(--text-muted);">Momen hangat di mana kedua keluarga besar saling mempererat tali persaudaraan serta menyatukan niat menuju ikatan suci pernikahan.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  
-  
+  </div>
 
   <!-- RSVP & Guestbook Section -->
   <section class="container" id="rsvp" style="padding-bottom: 100px;">
@@ -902,7 +870,8 @@
       <form id="rsvpForm">
         <div class="form-group">
           <label for="nama"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
-          <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+          <!-- Integrated dynamic guest-name into placeholder and default value -->
+          <input type="text" class="form-control" id="nama" name="nama" placeholder="Tamu Undangan" value="" required>
         </div>
 
         <div class="form-group">
@@ -927,27 +896,110 @@
           <i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi
         </button>
       </form>
+
+      <!-- Live Guestbook & Ucapan Container -->
+      <div style="margin-top: 35px; border-top: 1px dashed var(--bg-card-border); padding-top: 25px;">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h3 class="font-serif-title" style="color: var(--primary-light); font-size: 1.3rem;">
+            <i class="fa-solid fa-comments" style="color: var(--primary);"></i> Live Guestbook &amp; Ucapan
+          </h3>
+          <p id="guestbook-subtitle" style="font-size: 0.82rem; color: var(--text-muted);">Ucapan &amp; Doa Restu Tamu Undangan</p>
+        </div>
+
+        <div id="guestbook-feed" class="guestbook-feed">
+          <div style="text-align: center; color: var(--text-muted); padding: 15px; font-size: 0.88rem;">
+            <i class="fa-solid fa-spinner fa-spin"></i> Memuat ucapan terbaru...
+          </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div id="guestbook-pagination" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px;">
+          <button id="prevWishBtn" class="btn-outline" style="padding: 6px 16px; font-size: 0.8rem; border-radius: 20px;" onclick="changeWishPage(-1)">
+            <i class="fa-solid fa-chevron-left"></i> Sebelumnya
+          </button>
+          <span id="wishPageInfo" style="font-size: 0.82rem; font-weight: 600; color: var(--primary-light);">1 / 1</span>
+          <button id="nextWishBtn" class="btn-outline" style="padding: 6px 16px; font-size: 0.8rem; border-radius: 20px;" onclick="changeWishPage(1)">
+            Selanjutnya <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer style="text-align: center; padding: 25px 20px; background: rgba(250, 245, 239, 0.98); font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(200, 162, 97, 0.25);">
     <p class="font-script gold-gradient-text" style="font-size: 2rem; margin-bottom: 5px;">Tian &amp; Bunga</p>
-    <p style="margin-bottom: 40px;">Terima kasih atas doa dan kehadiran Anda.</p>
+    <p style="margin-bottom: 15px;">Terima kasih atas doa dan kehadiran Anda.
+      <br>Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam hari bahagia ini.
+      <br><b>See you on our wedding day!</b>
+    </p>
+    <p style="font-size: 1.8rem;margin-bottom: 40px;"><b>وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ  </b></p>
   </footer>
 
   <script>
     // Google Apps Script Web App Deployment URL
     const SCRIPT_URL = 'https://script.google.com/a/macros/umm.ac.id/s/AKfycbyLvORYTAkEySYzD7WWy12wvl6zp2ymKlJ19oBMcNZUPkI6Vfeg6RS0PCFchCM96Da-ng/exec';
 
-    // Parse guest name from URL parameter e.g., ?to=Budi+Santoso
-    window.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const toParam = urlParams.get('to') || urlParams.get('n');
-      if (toParam) {
-        document.getElementById('guest-name-display').innerText = toParam;
+    // Pagination State
+    let currentWishPage = 1;
+    const wishesPerPage = 3;
+    let allWishesData = [];
+
+    // Default sample wishes for local fallback & preview display
+    const defaultWishes = [
+      {
+        nama: 'Keluarga Besar Bpk. Ahmad',
+        kehadiran: 'Hadir',
+        ucapan: 'Selamat untuk Tian & Bunga! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin.',
+        timestamp: 'Baru saja'
+      },
+      {
+        nama: 'Siti & Dwi',
+        kehadiran: 'Hadir',
+        ucapan: 'Selamat menempuh hidup baru sahabatku! Semoga langgeng dan selalu dilimpahi kebahagiaan.',
+        timestamp: '1 jam yang lalu'
+      },
+      {
+        nama: 'Rizky Pratama',
+        kehadiran: 'Hadir',
+        ucapan: 'Happy Wedding Tian & Bunga! Semoga dilancarkan sampai hari H.',
+        timestamp: '2 jam yang lalu'
+      },
+      {
+        nama: 'Andi & Maya',
+        kehadiran: 'Hadir',
+        ucapan: 'Selamat bahagia untuk kalian berdua! Semoga langgeng sampai kakek nenek.',
+        timestamp: '3 jam yang lalu'
+      },
+      {
+        nama: 'Budi Santoso',
+        kehadiran: 'Tidak Hadir',
+        ucapan: 'Mohon maaf belum bisa hadir secara langsung. Doa terbaik untuk Tian dan Bunga!',
+        timestamp: '5 jam yang lalu'
       }
-    });
+    ];
+
+    function getLocalWishes() {
+      try {
+        const stored = localStorage.getItem('tb_wedding_wishes');
+        return stored ? JSON.parse(stored) : defaultWishes;
+      } catch (e) {
+        return defaultWishes;
+      }
+    }
+
+    function saveLocalWish(wish) {
+      try {
+        const list = getLocalWishes();
+        list.unshift({
+          ...wish,
+          timestamp: 'Baru saja'
+        });
+        localStorage.setItem('tb_wedding_wishes', JSON.stringify(list));
+      } catch (e) {
+        // Fallback silently if localStorage is restricted
+      }
+    }
 
     // Countdown Timer Logic
     const eventDate = new Date('2026-10-24T08:00:00').getTime();
@@ -1012,6 +1064,9 @@
 
       const payload = { nama, kehadiran, jumlah, ucapan };
 
+      // Save locally first for instant UI response
+      saveLocalWish(payload);
+
       // Background POST to Google Apps Script URL
       if (SCRIPT_URL) {
         fetch(SCRIPT_URL, {
@@ -1025,18 +1080,157 @@
           btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
           showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
           document.getElementById('rsvpForm').reset();
+          fetchLiveGuestbook();
         })
         .catch(err => {
-          console.error("GAS Post Error:", err);
           btn.disabled = false;
           btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
           showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
           document.getElementById('rsvpForm').reset();
+          fetchLiveGuestbook();
         });
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
+        showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
+        document.getElementById('rsvpForm').reset();
+        fetchLiveGuestbook();
       }
     });
 
-    // Copy Bank Account Number Functionality
+    // Fetch & Display Paginated Live Guestbook Messages
+    function fetchLiveGuestbook() {
+      if (!SCRIPT_URL) {
+        setWishData(getLocalWishes());
+        return;
+      }
+
+      fetch(SCRIPT_URL)
+        .then(res => {
+          if (!res.ok) throw new Error('Network error');
+          return res.json();
+        })
+        .then(data => {
+          let list = [];
+          if (Array.isArray(data)) {
+            list = data;
+          } else if (data && Array.isArray(data.data)) {
+            list = data.data;
+          } else if (data && Array.isArray(data.result)) {
+            list = data.result;
+          } else if (data && Array.isArray(data.comments)) {
+            list = data.comments;
+          }
+
+          if (list && list.length > 0) {
+            setWishData(list);
+          } else {
+            setWishData(getLocalWishes());
+          }
+        })
+        .catch(() => {
+          setWishData(getLocalWishes());
+        });
+    }
+
+    function setWishData(list) {
+      allWishesData = (list || []).filter(item => item && (item.nama || item.ucapan || item.name || item.message));
+      currentWishPage = 1;
+      renderWishPage();
+    }
+
+    function changeWishPage(direction) {
+      const maxPages = Math.ceil(allWishesData.length / wishesPerPage) || 1;
+      currentWishPage += direction;
+      if (currentWishPage < 1) currentWishPage = 1;
+      if (currentWishPage > maxPages) currentWishPage = maxPages;
+      renderWishPage();
+    }
+
+    function renderWishPage() {
+      const feedContainer = document.getElementById('guestbook-feed');
+      const pageInfo = document.getElementById('wishPageInfo');
+      const prevBtn = document.getElementById('prevWishBtn');
+      const nextBtn = document.getElementById('nextWishBtn');
+      const subtitle = document.getElementById('guestbook-subtitle');
+
+      if (!feedContainer) return;
+
+      const totalItems = allWishesData.length;
+      const maxPages = Math.ceil(totalItems / wishesPerPage) || 1;
+
+      if (subtitle) {
+        subtitle.innerText = `${totalItems} Ucapan & Doa Restu dari Tamu Undangan`;
+      }
+
+      if (totalItems === 0) {
+        feedContainer.innerHTML = `
+          <div style="text-align: center; color: var(--text-muted); padding: 15px; font-size: 0.88rem;">
+            Belum ada ucapan. Jadilah yang pertama memberikan ucapan!
+          </div>`;
+        if (pageInfo) pageInfo.innerText = "0 / 0";
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+        return;
+      }
+
+      const startIndex = (currentWishPage - 1) * wishesPerPage;
+      const currentPageItems = allWishesData.slice(startIndex, startIndex + wishesPerPage);
+
+      let html = '';
+      currentPageItems.forEach(item => {
+        const name = item.nama || item.name || 'Tamu Undangan';
+        const status = item.kehadiran || item.status || 'Hadir';
+        const comment = item.ucapan || item.message || item.comment || '';
+        const timestamp = item.timestamp || item.date || item.waktu || '';
+
+        let badgeClass = 'badge-hadir';
+        if (status.toLowerCase().includes('tidak')) {
+          badgeClass = 'badge-tidak';
+        } else if (status.toLowerCase().includes('ragu')) {
+          badgeClass = 'badge-ragu';
+        }
+
+        html += `
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-author"><i class="fa-regular fa-user" style="margin-right: 5px;"></i>${escapeHtml(name)}</span>
+              <span class="badge-status ${badgeClass}">${escapeHtml(status)}</span>
+            </div>
+            <div class="comment-body">${escapeHtml(comment)}</div>
+            ${timestamp ? `<span class="comment-time"><i class="fa-regular fa-clock"></i> ${escapeHtml(timestamp)}</span>` : ''}
+          </div>
+        `;
+      });
+
+      feedContainer.innerHTML = html;
+
+      // Update Pagination UI Controls
+      if (pageInfo) pageInfo.innerText = `${currentWishPage} / ${maxPages}`;
+      
+      if (prevBtn) {
+        prevBtn.disabled = currentWishPage <= 1;
+        prevBtn.style.opacity = currentWishPage <= 1 ? "0.5" : "1";
+        prevBtn.style.cursor = currentWishPage <= 1 ? "not-allowed" : "pointer";
+      }
+
+      if (nextBtn) {
+        nextBtn.disabled = currentWishPage >= maxPages;
+        nextBtn.style.opacity = currentWishPage >= maxPages ? "0.5" : "1";
+        nextBtn.style.cursor = currentWishPage >= maxPages ? "not-allowed" : "pointer";
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
     function copyToClipboard(text, label) {
       const el = document.createElement('textarea');
       el.value = text;
@@ -1055,26 +1249,16 @@
         toast.classList.remove('show');
       }, 3000);
     }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	function toggleWeddingGift() {
+
+    function toggleWeddingGift() {
       const giftContent = document.getElementById('giftContent');
       const btn = document.getElementById('toggleGiftBtn');
-      if (giftContent.style.display === 'none' || giftContent.style.display === '') {
+      if (giftContent && (giftContent.style.display === 'none' || giftContent.style.display === '')) {
         giftContent.style.display = 'block';
-        btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Sembunyikan';
-      } else {
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Sembunyikan';
+      } else if (giftContent) {
         giftContent.style.display = 'none';
-        btn.innerHTML = '<i class="fa-solid fa-gift"></i> Amplop Digital &amp; Kado';
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-gift"></i> Amplop Digital &amp; Kado';
       }
     }
 
@@ -1134,124 +1318,131 @@
       animateParticles();
     }
 	
-	// 3. Dynamic QR Code Generator based on Guest Name
-let currentGuestName = "Tamu Undangan";
-let coverQrObj = null;
-let mainQrObj = null;
+    // Dynamic QR Code Generator based on Guest Name
+    let currentGuestName = "Tamu Undangan";
+    let coverQrObj = null;
+    let mainQrObj = null;
 
-function generateGuestID(name) {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = (hash << 5) - hash + name.charCodeAt(i);
-    hash |= 0;
-  }
-  return 'TB-' + Math.abs(hash).toString(36).toUpperCase().padStart(6, '0');
-}
-
-function renderQRCodes(name) {
-  // Update variabel global nama tamu
-  currentGuestName = name;
-  const guestId = generateGuestID(name);
-  
-  const qrData = JSON.stringify({
-    guest: name,
-    id: guestId
-  });
-
-  // Helper aman untuk update innerText tanpa crash jika elemen tidak ada
-  const setElementText = (id, text) => {
-    const el = document.getElementById(id);
-    if (el) el.innerText = text;
-  };
-
-  // Update Label Elements
-  setElementText('guest-name-display', name);
-  setElementText('qr-guest-name', name);
-  setElementText('qr-code-id', "ID: " + guestId);
-
-  const guestInput = document.getElementById('guestName');
-  if (guestInput) {
-    guestInput.value = name === "Tamu Undangan" ? "" : name;
-  }
-
-  // Clear previous QR Canvas
-  const coverElem = document.getElementById('cover-qrcode');
-  const mainElem = document.getElementById('main-qrcode');
-
-  if (coverElem) coverElem.innerHTML = "";
-  if (mainElem) mainElem.innerHTML = "";
-
-  // Render Cover QR
-  if (coverElem && typeof QRCode !== 'undefined') {
-    coverQrObj = new QRCode(coverElem, {
-      text: qrData,
-      width: 110,
-      height: 110,
-      colorDark: "#9a783e",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  }
-
-  // Render Main Section QR
-  if (mainElem && typeof QRCode !== 'undefined') {
-    mainQrObj = new QRCode(mainElem, {
-      text: qrData,
-      width: 150,
-      height: 150,
-      colorDark: "#2c2825",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  }
-}
-
-function updateGuestQRFromInput(val) {
-  const name = val.trim() !== "" ? val.trim() : "Tamu Undangan";
-  renderQRCodes(name);
-}
-
-// Read URL query string for guest name
-window.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const guestParam = urlParams.get('to') || urlParams.get('u') || urlParams.get('nama');
-  if (guestParam) {
-    currentGuestName = guestParam.trim();
-  }
-  renderQRCodes(currentGuestName);
-});
-
-// Download QR Code Image
-function downloadQRCode() {
-  const qrCanvas = document.querySelector('#main-qrcode canvas');
-  const qrImg = document.querySelector('#main-qrcode img');
-  let imageURI = "";
-
-  // Utamakan img jika src-nya sudah berupa Base64 (Data URI), lalu fallback ke Canvas
-  if (qrImg && qrImg.src && qrImg.src.startsWith('data:image')) {
-    imageURI = qrImg.src;
-  } else if (qrCanvas) {
-    imageURI = qrCanvas.toDataURL("image/png");
-  }
-
-  if (imageURI && imageURI !== "data:,") {
-    const link = document.createElement('a');
-    const safeFileName = currentGuestName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    link.download = `Tiket_QR_${safeFileName}.png`;
-    link.href = imageURI;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    if (typeof showToast === 'function') {
-      showToast("Tiket QR Code berhasil diunduh!");
+    function generateGuestID(name) {
+      let hash = 0;
+      for (let i = 0; i < name.length; i++) {
+        hash = (hash << 5) - hash + name.charCodeAt(i);
+        hash |= 0;
+      }
+      return 'TB-' + Math.abs(hash).toString(36).toUpperCase().padStart(6, '0');
     }
-  } else {
-    if (typeof showToast === 'function') {
-      showToast("Gagal mengunduh QR Code. Silakan coba lagi.");
+
+    function renderQRCodes(name) {
+      // Update global guest name variable
+      currentGuestName = name;
+      const guestId = generateGuestID(name);
+      
+      const qrData = JSON.stringify({
+        guest: name,
+        id: guestId
+      });
+
+      // Helper for safely setting innerText
+      const setElementText = (id, text) => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = text;
+      };
+
+      // Update Label Elements
+      setElementText('guest-name-display', name);
+      setElementText('qr-guest-name', name);
+      setElementText('qr-code-id', "ID: " + guestId);
+
+      // Update the RSVP Form input field value and placeholder dynamically matching the guest name
+      const guestInput = document.getElementById('nama');
+      if (guestInput) {
+        if (name && name !== "Tamu Undangan") {
+          guestInput.value = name;
+          guestInput.placeholder = name;
+        } else {
+          guestInput.value = "";
+          guestInput.placeholder = "Masukkan nama Anda";
+        }
+      }
+
+      // Clear previous QR Canvas
+      const coverElem = document.getElementById('cover-qrcode');
+      const mainElem = document.getElementById('main-qrcode');
+
+      if (coverElem) coverElem.innerHTML = "";
+      if (mainElem) mainElem.innerHTML = "";
+
+      // Render Cover QR
+      if (coverElem && typeof QRCode !== 'undefined') {
+        coverQrObj = new QRCode(coverElem, {
+          text: qrData,
+          width: 110,
+          height: 110,
+          colorDark: "#9a783e",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
+
+      // Render Main Section QR
+      if (mainElem && typeof QRCode !== 'undefined') {
+        mainQrObj = new QRCode(mainElem, {
+          text: qrData,
+          width: 150,
+          height: 150,
+          colorDark: "#2c2825",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
     }
-  }
-}
+
+    function updateGuestQRFromInput(val) {
+      const name = val.trim() !== "" ? val.trim() : "Tamu Undangan";
+      renderQRCodes(name);
+    }
+
+    // Read URL query string for guest name on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestParam = urlParams.get('to') || urlParams.get('n') || urlParams.get('u') || urlParams.get('nama');
+      if (guestParam) {
+        currentGuestName = guestParam.trim();
+      }
+      renderQRCodes(currentGuestName);
+      fetchLiveGuestbook();
+    });
+
+    // Download QR Code Image
+    function downloadQRCode() {
+      const qrCanvas = document.querySelector('#main-qrcode canvas');
+      const qrImg = document.querySelector('#main-qrcode img');
+      let imageURI = "";
+
+      if (qrImg && qrImg.src && qrImg.src.startsWith('data:image')) {
+        imageURI = qrImg.src;
+      } else if (qrCanvas) {
+        imageURI = qrCanvas.toDataURL("image/png");
+      }
+
+      if (imageURI && imageURI !== "data:,") {
+        const link = document.createElement('a');
+        const safeFileName = currentGuestName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        link.download = `Tiket_QR_${safeFileName}.png`;
+        link.href = imageURI;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        if (typeof showToast === 'function') {
+          showToast("Tiket QR Code berhasil diunduh!");
+        }
+      } else {
+        if (typeof showToast === 'function') {
+          showToast("Gagal mengunduh QR Code. Silakan coba lagi.");
+        }
+      }
+    }
   </script>
 </body>
 </html>
