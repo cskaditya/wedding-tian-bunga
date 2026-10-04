@@ -247,61 +247,6 @@
       padding: 30px 20px;
       position: relative;
     }
-    .couple-img-wrapper {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 20px auto;
-      border-radius: 50%;
-      padding: 5px;
-      background: linear-gradient(135deg, var(--primary), transparent, var(--primary-dark));
-      box-shadow: 0 8px 25px rgba(200, 162, 97, 0.18);
-    }
-    .couple-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding: 20px 0;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      background: rgba(200, 162, 97, 0.35);
-      transform: translateX(-50%);
-    }
-    .timeline-item {
-      margin-bottom: 30px;
-      position: relative;
-      width: 50%;
-      padding: 0 25px;
-    }
-    .timeline-item.left { left: 0; text-align: right; }
-    .timeline-item.right { left: 50%; text-align: left; }
-    .timeline-icon {
-      position: absolute;
-      top: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      z-index: 2;
-    }
-    .timeline-item.left .timeline-icon { right: -18px; }
-    .timeline-item.right .timeline-icon { left: -18px; }
 
     .event-card {
       padding: 30px;
@@ -320,59 +265,6 @@
       background: linear-gradient(90deg, transparent, var(--primary), transparent);
     }
 
-    /* Gallery Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .gallery-item {
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 1 / 1;
-      cursor: pointer;
-      position: relative;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-
-    /* Lightbox Modal */
-    #lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 10000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    #lightbox img {
-      max-width: 90%;
-      max-height: 85vh;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(200, 162, 97, 0.3);
-    }
-
-    .bank-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 239, 230, 0.95));
-      border: 1px solid var(--bg-card-border);
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
-      margin-bottom: 20px;
-      position: relative;
-      box-shadow: 0 8px 25px rgba(200, 162, 97, 0.1);
-    }
-	
     /* QR Code Container Styling */
     .qrcode-box {
       background: #ffffff;
@@ -581,11 +473,6 @@
 
     /* Responsive Adjustments */
     @media (max-width: 640px) {
-      .timeline::before { left: 20px; }
-      .timeline-item { width: 100%; padding-left: 50px; text-align: left !important; }
-      .timeline-item.left { left: 0; }
-      .timeline-item.right { left: 0; }
-      .timeline-item.left .timeline-icon, .timeline-item.right .timeline-icon { left: 2px; }
       h1.script-font { font-size: 3.8rem !important; }
       .section-title h2 { font-size: 1.7rem; }
       .floral-left, .floral-right { width: 180px; }
@@ -597,34 +484,22 @@
   <!-- Background Particle Dust & Petals Canvas -->
   <canvas id="particle-canvas"></canvas>
 
-  <!-- Animated Garden Overlay (Swaying Botanical Silhouettes) -->
+  <!-- Animated Garden Overlay -->
   <div class="garden-overlay">
-    <!-- Left Swaying Floral Branch -->
     <svg class="floral-branch floral-left" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20,300 Q60,180 30,80 Q10,30 50,10" stroke="#c8a261" stroke-width="2" fill="none"/>
       <path d="M40,240 Q100,190 120,200" stroke="#a88241" stroke-width="1.5" fill="none"/>
-      <!-- Flower Blossoms -->
       <circle cx="120" cy="200" r="10" fill="#c8a261" opacity="0.6"/>
       <circle cx="120" cy="200" r="16" stroke="#c8a261" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
       <circle cx="50" cy="10" r="8" fill="#a88241" opacity="0.7"/>
-      <!-- Leaves -->
-      <path d="M30,220 Q60,200 45,180 Q30,200 30,220 Z" fill="#c8a261" opacity="0.5"/>
-      <path d="M40,160 Q80,140 60,120 Q40,140 40,160 Z" fill="#a88241" opacity="0.4"/>
-      <path d="M30,100 Q70,70 45,50 Q30,70 30,100 Z" fill="#c8a261" opacity="0.5"/>
     </svg>
 
-    <!-- Right Swaying Floral Branch -->
     <svg class="floral-branch floral-right" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20,300 Q60,180 30,80 Q10,30 50,10" stroke="#c8a261" stroke-width="2" fill="none"/>
       <path d="M40,240 Q100,190 120,200" stroke="#a88241" stroke-width="1.5" fill="none"/>
-      <!-- Flower Blossoms -->
       <circle cx="120" cy="200" r="12" fill="#c8a261" opacity="0.6"/>
       <circle cx="120" cy="200" r="18" stroke="#c8a261" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
       <circle cx="50" cy="10" r="10" fill="#9a783e" opacity="0.7"/>
-      <!-- Leaves -->
-      <path d="M30,220 Q60,200 45,180 Q30,200 30,220 Z" fill="#c8a261" opacity="0.5"/>
-      <path d="M40,160 Q80,140 60,120 Q40,140 40,160 Z" fill="#a88241" opacity="0.4"/>
-      <path d="M30,100 Q70,70 45,50 Q30,70 30,100 Z" fill="#c8a261" opacity="0.5"/>
     </svg>
   </div>
 
@@ -635,7 +510,6 @@
   <div class="music-control" id="musicBtn" onclick="toggleAudio()" title="Putar/Hentikan Musik">
     <i class="fa-solid fa-music"></i>
   </div>
-  <!-- Romantic Wedding Ambient Music -->
   <audio id="bgAudio" loop preload="auto">
     <source src="https://audio.jukehost.co.uk/01a0585f-997e-72ac-88ef-4a20a4c5f9ca" type="audio/mp3">
   </audio>
@@ -645,7 +519,7 @@
     <div style="max-width: 500px;">   
 
       <p style="font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 4px; color: var(--primary-light); font-weight: 600;">
-        The Wedding Of
+        The Wedding of
       </p>
 
       <h1 class="font-script gold-gradient-text script-font" style="font-size: 4.8rem; margin-bottom: -10px; line-height: 1.5;">
@@ -747,7 +621,7 @@
   <div class="container">
     <div class="glass-card" style="padding: 35px 25px; text-align: center;">
       <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: var(--primary); margin-bottom: 18px;"></i>
-      <p class="font-body" style="font-size: 1.5rem; font-weight: 800px; color: #44403c; line-height: 1.5; max-width: 650px; margin: 0 auto; margin-bottom: 15px;">
+      <p class="font-body" style="font-size: 1.5rem; color: #44403c; line-height: 1.5; max-width: 650px; margin: 0 auto; margin-bottom: 15px;">
         وَمِنْ اٰيٰتِهٖ اَنْ خَلَقَ لَكُمۡ مِّنْ اَنْفُسِكُمْ اَزۡوَاجًا لِّتَسۡكُنُوۡا اِلَيۡهَا وَجَعَلَ بَيۡنَكُمۡ مَّوَدَّةً وَّرَحۡمَةً ۚ  اِنَّ فِىۡ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوۡنَ
       </p>
       <p class="font-body" style="font-size: 0.95rem; font-style: italic; color: #44403c; line-height: 1.6; max-width: 650px; margin: 0 auto;">
@@ -881,7 +755,6 @@
       <form id="rsvpForm">
         <div class="form-group">
           <label for="nama"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
-          <!-- Integrated dynamic guest-name into placeholder and default value -->
           <input type="text" class="form-control" id="nama" name="nama" placeholder="Tamu Undangan" value="" required>
         </div>
 
@@ -948,7 +821,11 @@
   </footer>
 
   <script>
-    // Google Apps Script Web App Deployment URL
+    // Target Google Spreadsheet Configuration
+    const SPREADSHEET_ID = '1fVxc0NrDVCyvVnvYDjRVVTmOnM_9sj3IJZjX14I7O_8';
+    const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json`;
+
+    // Google Apps Script Web App Deployment URL for Submissions
     const SCRIPT_URL = 'https://script.google.com/a/macros/umm.ac.id/s/AKfycbyLvORYTAkEySYzD7WWy12wvl6zp2ymKlJ19oBMcNZUPkI6Vfeg6RS0PCFchCM96Da-ng/exec';
 
     // Pagination State
@@ -956,7 +833,7 @@
     const wishesPerPage = 3;
     let allWishesData = [];
 
-    // Default sample wishes for local fallback & preview display
+    // Fallback wishes sample
     const defaultWishes = [
       {
         nama: 'Barra',
@@ -975,18 +852,6 @@
         kehadiran: 'Hadir',
         ucapan: 'Happy Wedding Tian & Bunga! Semoga dilancarkan sampai hari H.',
         timestamp: '2 jam yang lalu'
-      },
-      {
-        nama: 'Andi & Maya',
-        kehadiran: 'Hadir',
-        ucapan: 'Selamat bahagia untuk kalian berdua! Semoga langgeng sampai kakek nenek.',
-        timestamp: '3 jam yang lalu'
-      },
-      {
-        nama: 'Ahmad',
-        kehadiran: 'Hadir',
-        ucapan: 'Mohon maaf belum bisa hadir secara langsung. Doa terbaik untuk Tian dan Bunga!',
-        timestamp: '5 jam yang lalu'
       }
     ];
 
@@ -1053,12 +918,10 @@
     function openInvitation() {
       const cover = document.getElementById('cover-screen');
       cover.classList.add('opened');
-
-      // Attempt auto-playing background music on user action click
       toggleAudio();
     }
 
-    // Form Submission Logic (Direct Sync to Google Apps Script)
+    // Form Submission Logic
     document.getElementById('rsvpForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSubmit');
@@ -1075,10 +938,16 @@
 
       const payload = { nama, kehadiran, jumlah, ucapan };
 
-      // Save locally first for instant UI response
       saveLocalWish(payload);
 
-      // Background POST to Google Apps Script URL
+      const finishSubmission = () => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
+        showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
+        document.getElementById('rsvpForm').reset();
+        setTimeout(fetchLiveGuestbook, 1000);
+      };
+
       if (SCRIPT_URL) {
         fetch(SCRIPT_URL, {
           method: 'POST',
@@ -1086,52 +955,127 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         })
-        .then(() => {
-          btn.disabled = false;
-          btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
-          showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
-          document.getElementById('rsvpForm').reset();
-          fetchLiveGuestbook();
-        })
-        .catch(err => {
-          btn.disabled = false;
-          btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
-          showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
-          document.getElementById('rsvpForm').reset();
-          fetchLiveGuestbook();
-        });
+        .then(finishSubmission)
+        .catch(finishSubmission);
       } else {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirim Konfirmasi';
-        showToast('Terima kasih! Konfirmasi kehadiran Anda berhasil terkirim.');
-        document.getElementById('rsvpForm').reset();
-        fetchLiveGuestbook();
+        finishSubmission();
       }
     });
 
-    // Fetch & Display Paginated Live Guestbook Messages
+    // Fetch Live Guestbook from Google Spreadsheet (GViz JSON API)
     function fetchLiveGuestbook() {
+      const feedContainer = document.getElementById('guestbook-feed');
+      if (feedContainer && allWishesData.length === 0) {
+        feedContainer.innerHTML = `
+          <div style="text-align: center; color: var(--text-muted); padding: 15px; font-size: 0.88rem;">
+            <i class="fa-solid fa-spinner fa-spin"></i> Memuat ucapan dari Google Spreadsheet...
+          </div>`;
+      }
+
+      fetch(GVIZ_URL)
+        .then(res => res.text())
+        .then(text => {
+          try {
+            const jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
+            const data = JSON.parse(jsonString);
+            const rows = data.table ? data.table.rows : [];
+            const cols = data.table ? data.table.cols : [];
+
+            if (!rows || rows.length === 0) {
+              fetchAppsScriptFallback();
+              return;
+            }
+
+            // Identify column indexes based on headers
+            let nameIdx = -1, attendanceIdx = -1, wishIdx = -1, timeIdx = -1;
+
+            cols.forEach((col, idx) => {
+              const label = (col.label || '').toLowerCase();
+              if (label.includes('nama') || label.includes('name')) nameIdx = idx;
+              else if (label.includes('hadir') || label.includes('kehadiran') || label.includes('status')) attendanceIdx = idx;
+              else if (label.includes('ucapan') || label.includes('pesan') || label.includes('doa') || label.includes('message')) wishIdx = idx;
+              else if (label.includes('timestamp') || label.includes('waktu') || label.includes('tanggal') || label.includes('date')) timeIdx = idx;
+            });
+
+            // Default column index fallbacks if headers aren't labeled in GViz
+            if (nameIdx === -1) nameIdx = 1;
+            if (attendanceIdx === -1) attendanceIdx = 2;
+            if (wishIdx === -1) wishIdx = cols.length > 3 ? 4 : 3;
+            if (timeIdx === -1) timeIdx = 0;
+
+            const parsedWishes = [];
+
+            rows.forEach((row, rIdx) => {
+              const c = row.c || [];
+              const getCellVal = (idx) => {
+                if (idx >= 0 && c[idx]) {
+                  return c[idx].v !== null && c[idx].v !== undefined ? (c[idx].f || c[idx].v) : '';
+                }
+                return '';
+              };
+
+              let rawName = getCellVal(nameIdx);
+              let rawAttendance = getCellVal(attendanceIdx);
+              let rawWish = getCellVal(wishIdx);
+              let rawTime = getCellVal(timeIdx);
+
+              // Skip header row if present in row 0
+              if (rIdx === 0 && (String(rawName).toLowerCase().includes('nama') || String(rawWish).toLowerCase().includes('ucapan'))) {
+                return;
+              }
+
+              // Format date string if GViz outputs Date(...) constructor
+              if (typeof rawTime === 'string' && rawTime.startsWith('Date(')) {
+                try {
+                  const parts = rawTime.match(/\d+/g);
+                  if (parts && parts.length >= 3) {
+                    const d = new Date(parts[0], parts[1], parts[2], parts[3]||0, parts[4]||0);
+                    rawTime = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+                  }
+                } catch(e) {}
+              }
+
+              if (rawName || rawWish) {
+                parsedWishes.unshift({
+                  nama: String(rawName || 'Tamu Undangan'),
+                  kehadiran: String(rawAttendance || 'Hadir'),
+                  ucapan: String(rawWish || ''),
+                  timestamp: String(rawTime || '')
+                });
+              }
+            });
+
+            if (parsedWishes.length > 0) {
+              setWishData(parsedWishes);
+            } else {
+              fetchAppsScriptFallback();
+            }
+
+          } catch (e) {
+            console.warn('GViz parsing failed, trying fallback API:', e);
+            fetchAppsScriptFallback();
+          }
+        })
+        .catch(err => {
+          console.warn('GViz fetch failed, trying fallback API:', err);
+          fetchAppsScriptFallback();
+        });
+    }
+
+    function fetchAppsScriptFallback() {
       if (!SCRIPT_URL) {
         setWishData(getLocalWishes());
         return;
       }
 
       fetch(SCRIPT_URL)
-        .then(res => {
-          if (!res.ok) throw new Error('Network error');
-          return res.json();
-        })
+        .then(res => res.json())
         .then(data => {
           let list = [];
-          if (Array.isArray(data)) {
-            list = data;
-          } else if (data && Array.isArray(data.data)) {
-            list = data.data;
-          } else if (data && Array.isArray(data.result)) {
-            list = data.result;
-          } else if (data && Array.isArray(data.comments)) {
-            list = data.comments;
-          }
+          if (Array.isArray(data)) list = data;
+          else if (data && Array.isArray(data.data)) list = data.data;
+          else if (data && Array.isArray(data.result)) list = data.result;
+          else if (data && Array.isArray(data.comments)) list = data.comments;
 
           if (list && list.length > 0) {
             setWishData(list);
@@ -1242,16 +1186,6 @@
         .replace(/'/g, "&#039;");
     }
 
-    function copyToClipboard(text, label) {
-      const el = document.createElement('textarea');
-      el.value = text;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-      showToast(label + ' berhasil disalin!');
-    }
-
     function showToast(message) {
       const toast = document.getElementById('toast');
       toast.innerText = message;
@@ -1259,18 +1193,6 @@
       setTimeout(() => {
         toast.classList.remove('show');
       }, 3000);
-    }
-
-    function toggleWeddingGift() {
-      const giftContent = document.getElementById('giftContent');
-      const btn = document.getElementById('toggleGiftBtn');
-      if (giftContent && (giftContent.style.display === 'none' || giftContent.style.display === '')) {
-        giftContent.style.display = 'block';
-        if (btn) btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Sembunyikan';
-      } else if (giftContent) {
-        giftContent.style.display = 'none';
-        if (btn) btn.innerHTML = '<i class="fa-solid fa-gift"></i> Amplop Digital &amp; Kado';
-      }
     }
 
     // Canvas Floating Flower Petals Animation
@@ -1285,7 +1207,6 @@
         height = particleCanvas.height = window.innerHeight;
       });
 
-      // Generate Flower Petals & Gold Dust
       const petals = Array.from({ length: 35 }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -1303,7 +1224,6 @@
         ctx.translate(x, y);
         ctx.rotate((rotation * Math.PI) / 180);
         ctx.beginPath();
-        // Petal Oval Shape
         ctx.ellipse(0, 0, size, size / 2, 0, 0, Math.PI * 2);
         ctx.fillStyle = color + opacity + ')';
         ctx.fill();
@@ -1331,8 +1251,6 @@
 	
     // Dynamic QR Code Generator based on Guest Name
     let currentGuestName = "Tamu Undangan";
-    let coverQrObj = null;
-    let mainQrObj = null;
 
     function generateGuestID(name) {
       let hash = 0;
@@ -1344,7 +1262,6 @@
     }
 
     function renderQRCodes(name) {
-      // Update global guest name variable
       currentGuestName = name;
       const guestId = generateGuestID(name);
       
@@ -1353,18 +1270,15 @@
         id: guestId
       });
 
-      // Helper for safely setting innerText
       const setElementText = (id, text) => {
         const el = document.getElementById(id);
         if (el) el.innerText = text;
       };
 
-      // Update Label Elements
       setElementText('guest-name-display', name);
       setElementText('qr-guest-name', name);
       setElementText('qr-code-id', "ID: " + guestId);
 
-      // Update the RSVP Form input field value and placeholder dynamically matching the guest name
       const guestInput = document.getElementById('nama');
       if (guestInput) {
         if (name && name !== "Tamu Undangan") {
@@ -1376,16 +1290,14 @@
         }
       }
 
-      // Clear previous QR Canvas
       const coverElem = document.getElementById('cover-qrcode');
       const mainElem = document.getElementById('main-qrcode');
 
       if (coverElem) coverElem.innerHTML = "";
       if (mainElem) mainElem.innerHTML = "";
 
-      // Render Cover QR
       if (coverElem && typeof QRCode !== 'undefined') {
-        coverQrObj = new QRCode(coverElem, {
+        new QRCode(coverElem, {
           text: qrData,
           width: 110,
           height: 110,
@@ -1395,9 +1307,8 @@
         });
       }
 
-      // Render Main Section QR
       if (mainElem && typeof QRCode !== 'undefined') {
-        mainQrObj = new QRCode(mainElem, {
+        new QRCode(mainElem, {
           text: qrData,
           width: 150,
           height: 150,
@@ -1408,12 +1319,7 @@
       }
     }
 
-    function updateGuestQRFromInput(val) {
-      const name = val.trim() !== "" ? val.trim() : "Tamu Undangan";
-      renderQRCodes(name);
-    }
-
-    // Read URL query string for guest name on load
+    // Read URL parameters on page load
     window.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const guestParam = urlParams.get('to') || urlParams.get('n') || urlParams.get('u') || urlParams.get('nama');
@@ -1445,13 +1351,9 @@
         link.click();
         document.body.removeChild(link);
 
-        if (typeof showToast === 'function') {
-          showToast("Tiket QR Code berhasil diunduh!");
-        }
+        showToast("Tiket QR Code berhasil diunduh!");
       } else {
-        if (typeof showToast === 'function') {
-          showToast("Gagal mengunduh QR Code. Silakan coba lagi.");
-        }
+        showToast("Gagal mengunduh QR Code. Silakan coba lagi.");
       }
     }
   </script>
